@@ -1,6 +1,7 @@
 import {cargarPokemones} from "./funciones.js"
 import {showListaDeTipos} from "./funciones.js"
 import {buscarPokemones} from "./funciones.js"
+import {ventanaEmergentePokemons} from "./funciones.js"
 
 let myContent = document.querySelector(".content");
 let myContentSearch = document.querySelector(".contentSearch");
@@ -18,6 +19,7 @@ document.addEventListener("click",async(e) => {
     }
 
     if (e.target.matches(".pokemonTypeContainer")){
-        console.log("entraste al pokemon")
+        let name = e.target.getAttribute("pokeName")
+        ventanaEmergentePokemons(name)
     }
 });
